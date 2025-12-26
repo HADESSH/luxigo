@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Luxigo</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+</head>
+
+<body class="bg-neutral-950 text-neutral-200">
+
+    <!-- navbar -->
+    <nav class="bg-neutral-900 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+
+            <div class="flex items-center gap-2">
+                <img src="img/luxigo-logo.jpg" alt="Luxigo Logo" class="w-20 h-20 rounded-full object-cover">
+                <span class="text-2xl font-bold text-yellow-400 tracking-wide">
+                    Luxigo
+                </span>
+            </div>
+
+            <div>
+                <a href="index.html" class="text-neutral-200 hover:text-yellow-400 mx-4 transition">Home</a>
+                <a href="abt.html" class="text-neutral-200 hover:text-yellow-400 mx-4 transition">About</a>
+                <a href="servicee.html" class="text-neutral-200 hover:text-yellow-400 mx-4 transition">Services</a>
+                <a href="contact.html" class="text-neutral-200 hover:text-yellow-400 mx-4 transition">Contact</a>
+            </div>
+
+            <!-- premium gold button -->
+            <div>
+                <a href="#" class="border border-yellow-400 text-yellow-400 px-4 py-2 rounded font-semibold
+                          hover:bg-yellow-400 hover:text-black transition">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-16 text-center">
+        <h1 class="text-5xl font-bold mb-4 text-yellow-400">Get in Touch</h1>
+        <p class="text-xl text-neutral-200">We'd love to hear from you. Let's start a conversation.</p>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Contact Form -->
+            <div class="lg:col-span-2 bg-neutral-900 rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold mb-6 text-yellow-400">Send Us a Message</h2>
+
+                <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6">
+                    <!-- Name Fields -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium mb-2">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Korn"
+                                class="w-full px-4 py-3 bg-neutral-800 border-2 border-neutral-700 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-neutral-200 transition"
+                                required minlength="2">
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium mb-2">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Leanghong"
+                                class="w-full px-4 py-3 bg-neutral-800 border-2 border-neutral-700 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-neutral-200 transition"
+                                required minlength="2">
+                        </div>
+                    </div>
+
+                    <!-- Email and Phone -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="taahsiem@example.com"
+                                class="w-full px-4 py-3 bg-neutral-800 border-2 border-neutral-700 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-neutral-200 transition"
+                                required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+(885) 123-456-789"
+                                pattern="[+]?[0-9\s\-\(\)]+"
+                                class="w-full px-4 py-3 bg-neutral-800 border-2 border-neutral-700 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-neutral-200 transition">
+                        </div>
+                    </div>
+
+                    <!-- Company and Subject -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="company" class="block text-sm font-medium mb-2">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Your Company"
+                                class="w-full px-4 py-3 bg-neutral-800 border-2 border-neutral-700 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-neutral-200 transition">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-2">Subject *</label>
+                            <select id="subject" name="subject"
+                                class="w-full px-4 py-3 bg-neutral-800 border-2 border-neutral-700 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-neutral-200 transition"
+                                required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="consulting">Consulting Services</option>
+                                <option value="development">Development Services</option>
+                                <option value="support">Technical Support</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-2">Message *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..."
+                            class="w-full px-4 py-3 bg-neutral-800 border-2 border-neutral-700 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-neutral-200 transition resize-none"
+                            required minlength="10"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div>
+                        <button type="submit"
+                            class="w-full bg-yellow-400 text-black px-6 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </div>
+
+                    <p class="text-sm text-neutral-400 text-center">
+                        * Required fields
+                    </p>
+                </form>
+            </div>
+
+            <!-- Contact Information Sidebar -->
+            <div class="space-y-6">
+
+                <!-- Contact Details Card -->
+                <div class="bg-neutral-900 rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-6 text-yellow-400">Contact Information</h3>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-400 rounded-full p-3 mr-4">
+                                <i class="fas fa-map-marker-alt text-black"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Address</h4>
+                                <p class="text-neutral-400 text-sm">156 Phum Dam Spey<br>Sla Ket, Battambang<br>Battambang, Cambodia</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-yellow-400 rounded-full p-3 mr-4">
+                                <i class="fas fa-phone text-black"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Phone</h4>
+                                <a href="tel:+15551234567"
+                                    class="text-neutral-400 text-sm hover:text-yellow-400 transition">+(885) 123-456-789</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-yellow-400 rounded-full p-3 mr-4">
+                                <i class="fas fa-envelope text-black"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email</h4>
+                                <a href="mailto:info@luxigo.com"
+                                    class="text-neutral-400 text-sm hover:text-yellow-400 transition">taahsiem@luxigo.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-yellow-400 rounded-full p-3 mr-4">
+                                <i class="fas fa-globe text-black"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Website</h4>
+                                <a href="https://www.luxigo.com"
+                                    class="text-neutral-400 text-sm hover:text-yellow-400 transition">www.luxigo.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Hours Card -->
+                <div class="bg-neutral-900 rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-6 text-yellow-400">Business Hours</h3>
+
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center pb-3 border-b border-neutral-800">
+                            <span class="font-medium">Monday - Friday</span>
+                            <span class="text-neutral-400">8:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-neutral-800">
+                            <span class="font-medium">Saturday</span>
+                            <span class="text-neutral-400">10:00 AM - 4:00 PM</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Sunday</span>
+                            <span class="text-red-400">Closed</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-yellow-400 bg-opacity-10 border border-yellow-400 rounded-lg">
+                        <p class="font-medium text-black">
+                            <i class="fas fa-info-circle mr-2"></i>24/7 Emergency Support Available
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Action Buttons -->
+                <div class="space-y-3">
+                    <a href="tel:+15551234567"
+                        class="block w-full bg-yellow-400 text-black px-6 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105 text-center">
+                        <i class="fas fa-phone mr-2"></i>Call Us Now
+                    </a>
+                    <a href="mailto:info@luxigo.com"
+                        class="block w-full border-2 border-yellow-400 text-yellow-400 px-6 py-4 rounded-lg font-semibold hover:bg-yellow-400 hover:text-black transition-all duration-300 text-center">
+                        <i class="fas fa-envelope mr-2"></i>Email Us
+                    </a>
+                    <a href="https://wa.me/15551234567"
+                        class="block w-full border-2 border-yellow-400 text-yellow-400 px-6 py-4 rounded-lg font-semibold hover:bg-yellow-400 hover:text-black transition-all duration-300 text-center">
+                        <i class="fab fa-whatsapp mr-2"></i>WhatsApp Chat
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Maps Section -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="bg-neutral-900 rounded-lg shadow-lg overflow-hidden">
+            <div class="p-6">
+                <h2 class="text-3xl font-bold mb-4 text-yellow-400">Visit Our Office</h2>
+                <p class="text-neutral-200 mb-6">Find us on the map and plan your visit. We're located in the heart of
+                    San Francisco's tech district.</p>
+            </div>
+            <div class="w-full h-96">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3885.68704859502!2d103.20852771081886!3d13.119001211575807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDA3JzA4LjQiTiAxMDPCsDEyJzQwLjAiRQ!5e0!3m2!1sen!2skh!4v1766747217333!5m2!1sen!2skh"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4 text-yellow-400">Frequently Asked Questions</h2>
+            <p class="text-neutral-200">Quick answers to common questions</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+            <details class="bg-neutral-900 rounded-lg shadow-lg p-6 cursor-pointer">
+                <summary class="font-semibold text-lg text-yellow-400">What services does Luxigo offer?</summary>
+                <p class="mt-4 text-neutral-300">We offer a comprehensive range of digital solutions including
+                    consulting, development, design, and ongoing support services tailored to your business needs.</p>
+            </details>
+
+            <details class="bg-neutral-900 rounded-lg shadow-lg p-6 cursor-pointer">
+                <summary class="font-semibold text-lg text-yellow-400">How quickly can you respond to inquiries?
+                </summary>
+                <p class="mt-4 text-neutral-300">We typically respond to all inquiries within 24 hours during business
+                    days. For urgent matters, please call us directly.</p>
+            </details>
+
+            <details class="bg-neutral-900 rounded-lg shadow-lg p-6 cursor-pointer">
+                <summary class="font-semibold text-lg text-yellow-400">Do you offer free consultations?</summary>
+                <p class="mt-4 text-neutral-300">Yes! We offer a complimentary initial consultation to discuss your
+                    project requirements and how we can help achieve your goals.</p>
+            </details>
+
+            <details class="bg-neutral-900 rounded-lg shadow-lg p-6 cursor-pointer">
+                <summary class="font-semibold text-lg text-yellow-400">What is your typical project timeline?</summary>
+                <p class="mt-4 text-neutral-300">Project timelines vary based on scope and complexity. During our
+                    consultation, we'll provide a detailed timeline specific to your project.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="px-40 py-8 bg-neutral-900 mb-5 mt-8">
+        <div class="grid grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-yellow-400">Company</h3>
+                <ul class="text-neutral-200 space-y-2">
+                    <li><a href="#" class="hover:text-yellow-400 transition">About Us</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">Careers</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">Blog</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-yellow-400">Services</h3>
+                <ul class="text-neutral-200 space-y-2">
+                    <li><a href="#" class="hover:text-yellow-400 transition">Consulting</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">Development</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">Design</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-yellow-400">Support</h3>
+                <ul class="text-neutral-200 space-y-2">
+                    <li><a href="#" class="hover:text-yellow-400 transition">Help Center</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold text-yellow-400 mb-4">Luxigo</h3>
+                <p class="text-neutral-200 mb-4">Follow us on social media for the latest updates and news.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-neutral-200 hover:text-yellow-400 transition"><i
+                            class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-neutral-200 hover:text-yellow-400 transition"><i
+                            class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-neutral-200 hover:text-yellow-400 transition"><i
+                            class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#" class="text-neutral-200 hover:text-yellow-400 transition"><i
+                            class="fab fa-instagram fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="bg-neutral-900 mx-40 h-px">
+        <div class="items-center justify-center flex">
+            <div class="text-neutral-500 py-4">
+                &copy; 2024 Luxigo. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
