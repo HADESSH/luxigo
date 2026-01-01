@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up - Luxigo</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        .flip-container {
+            perspective: 1000px;
+        }
+
+        .flipper {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .flip-container.flipped .flipper {
+            transform: rotateY(180deg);
+        }
+
+        .front,
+        .back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .front {
+            z-index: 2;
+            transform: rotateY(0deg);
+        }
+
+        .back {
+            transform: rotateY(180deg);
+        }
+
+        .arrow-btn {
+            position: absolute;
+            top: 20px;
+            background: rgba(250, 204, 21, 0.1);
+            border: 2px solid rgb(250, 204, 21);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .arrow-btn:hover {
+            background: rgb(250, 204, 21);
+            transform: scale(1.1);
+        }
+
+        .arrow-btn:hover i {
+            color: black;
+        }
+
+        .arrow-left {
+            right: 20px;
+        }
+
+        .arrow-right {
+            left: 20px;
+        }
+    </style>
+</head>
+
+<body class="bg-neutral-950 text-neutral-200 min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md">
+        <!-- Logo Section -->
+        <div class="text-center mb-8">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center">
+                    <img src="img/luxigo-logo.jpg" alt="" class="w-16 h-16 rounded-full object-cover">
+                </div>
+            </div>
+            <h1 class="text-3xl font-bold text-yellow-400" id="main-title">Create Your Account</h1>
+            <p class="text-neutral-400 mt-2" id="main-subtitle">Join Luxigo today and unlock premium features</p>
+        </div>
+
+        <!-- Flip Container -->
+        <div class="flip-container" id="flipContainer">
+            <div class="flipper" style="min-height: 600px;">
+
+                <!-- FRONT - Sign Up -->
+                <div class="front">
+                    <div class="bg-neutral-900 rounded-lg shadow-2xl p-8 border border-neutral-800 relative">
+                        <!-- Arrow Button -->
+                        <div class="arrow-btn arrow-left" onclick="flipCard()">
+                            <i class="fas fa-arrow-right text-yellow-400 text-xl"></i>
+                        </div>
+
+                        <h2 class="text-2xl font-bold text-yellow-400 mb-6 mt-8 text-center">Sign Up</h2>
+
+                        <form action="#" method="POST" class="space-y-4">
+                            <!-- Full Name -->
+                            <div>
+                                <label for="signup-fullname" class="block text-sm font-medium text-neutral-300 mb-2">
+                                    <i class="fas fa-user mr-2 text-yellow-400"></i>Full Name
+                                </label>
+                                <input type="text" id="signup-fullname" name="fullname" required
+                                    class="w-full px-4 py-2.5 bg-neutral-800 border border-neutral-700 rounded-lg focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition text-neutral-200"
+                                    placeholder="John Doe">
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="signup-email" class="block text-sm font-medium text-neutral-300 mb-2">
+                                    <i class="fas fa-envelope mr-2 text-yellow-400"></i>Email Address
+                                </label>
+                                <input type="email" id="signup-email" name="email" required
+                                    class="w-full px-4 py-2.5 bg-neutral-800 border border-neutral-700 rounded-lg focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition text-neutral-200"
+                                    placeholder="john@example.com">
+                            </div>
+
+                            <!-- Password -->
+                            <div>
+                                <label for="signup-password" class="block text-sm font-medium text-neutral-300 mb-2">
+                                    <i class="fas fa-lock mr-2 text-yellow-400"></i>Password
+                                </label>
+                                <input type="password" id="signup-password" name="password" required minlength="8"
+                                    class="w-full px-4 py-2.5 bg-neutral-800 border border-neutral-700 rounded-lg focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition text-neutral-200"
+                                    placeholder="••••••••">
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div>
+                                <label for="signup-confirm" class="block text-sm font-medium text-neutral-300 mb-2">
+                                    <i class="fas fa-lock mr-2 text-yellow-400"></i>Confirm Password
+                                </label>
+                                <input type="password" id="signup-confirm" name="confirm-password" required
+                                    minlength="8"
+                                    class="w-full px-4 py-2.5 bg-neutral-800 border border-neutral-700 rounded-lg focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition text-neutral-200"
+                                    placeholder="••••••••">
+                            </div>
+
+                            <!-- Terms -->
+                            <div class="flex items-start">
+                                <input type="checkbox" id="terms" name="terms" required
+                                    class="mt-1 w-4 h-4 bg-neutral-800 border-neutral-700 rounded focus:ring-yellow-400 focus:ring-2">
+                                <label for="terms" class="ml-3 text-xs text-neutral-400">
+                                    I agree to the <a href="#" class="text-yellow-400 hover:underline">Terms</a>
+                                    and <a href="#" class="text-yellow-400 hover:underline">Privacy Policy</a>
+                                </label>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit"
+                                class="w-full bg-yellow-400 text-black font-semibold py-3 rounded-lg hover:bg-yellow-500 transition transform hover:scale-[1.02] active:scale-[0.98]">
+                                <i class="fas fa-user-plus mr-2"></i>Create Account
+                            </button>
+
+                            <!-- Social Sign Up -->
+                            <div class="relative my-4">
+                                <div class="absolute inset-0 flex items-center">
+                                    <div class="w-full border-t border-neutral-800"></div>
+                                </div>
+                                <div class="relative flex justify-center text-sm">
+                                    <span class="px-4 bg-neutral-900 text-neutral-500">Or continue with</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-3">
+                                <a href="#"
+                                    class="flex items-center justify-center py-2.5 px-4 bg-neutral-800 border border-neutral-700 rounded-lg hover:bg-neutral-750 hover:border-yellow-400 transition">
+                                    <i class="fab fa-google text-xl"></i>
+                                </a>
+                                <a href="#"
+                                    class="flex items-center justify-center py-2.5 px-4 bg-neutral-800 border border-neutral-700 rounded-lg hover:bg-neutral-750 hover:border-yellow-400 transition">
+                                    <i class="fab fa-facebook text-xl"></i>
+                                </a>
+                                <a href="#"
+                                    class="flex items-center justify-center py-2.5 px-4 bg-neutral-800 border border-neutral-700 rounded-lg hover:bg-neutral-750 hover:border-yellow-400 transition">
+                                    <i class="fab fa-apple text-xl"></i>
+                                </a>
+                            </div>
+                            
+                            <div class="text-center mt-6">
+                                <a href="index.html" class="text-neutral-400 hover:text-yellow-400 transition">
+                                    <i class="fas fa-arrow-left mr-2"></i>Back to Home
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- BACK - Login -->
+                <div class="back">
+                    <div class="bg-neutral-900 rounded-lg shadow-2xl p-8 border border-neutral-800 relative">
+                        <!-- Arrow Button -->
+                        <div class="arrow-btn arrow-right" onclick="flipCard()">
+                            <i class="fas fa-arrow-left text-yellow-400 text-xl"></i>
+                        </div>
+
+                        <h2 class="text-2xl font-bold text-yellow-400 mb-6 mt-8 text-center">Sign In</h2>
+
+                        <form action="#" method="POST" class="space-y-5">
+                            <!-- Email -->
+                            <div>
+                                <label for="login-email" class="block text-sm font-medium text-neutral-300 mb-2">
+                                    <i class="fas fa-envelope mr-2 text-yellow-400"></i>Email Address
+                                </label>
+                                <input type="email" id="login-email" name="email" required
+                                    class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition text-neutral-200"
+                                    placeholder="john@example.com">
+                            </div>
+
+                            <!-- Password -->
+                            <div>
+                                <label for="login-password" class="block text-sm font-medium text-neutral-300 mb-2">
+                                    <i class="fas fa-lock mr-2 text-yellow-400"></i>Password
+                                </label>
+                                <input type="password" id="login-password" name="password" required
+                                    class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition text-neutral-200"
+                                    placeholder="••••••••">
+                            </div>
+
+                            <!-- Remember & Forgot -->
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="remember" name="remember"
+                                        class="w-4 h-4 bg-neutral-800 border-neutral-700 rounded focus:ring-yellow-400 focus:ring-2">
+                                    <label for="remember" class="ml-2 text-sm text-neutral-400">
+                                        Remember me
+                                    </label>
+                                </div>
+                                <a href="#" class="text-sm text-yellow-400 hover:underline">
+                                    Forgot Password?
+                                </a>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit"
+                                class="w-full bg-yellow-400 text-black font-semibold py-3 rounded-lg hover:bg-yellow-500 transition transform hover:scale-[1.02] active:scale-[0.98]">
+                                <i class="fas fa-sign-in-alt mr-2"></i>Sign In
+                            </button>
+
+                            <!-- Social Login -->
+                            <div class="relative my-5">
+                                <div class="absolute inset-0 flex items-center">
+                                    <div class="w-full border-t border-neutral-800"></div>
+                                </div>
+                                <div class="relative flex justify-center text-sm">
+                                    <span class="px-4 bg-neutral-900 text-neutral-500">Or continue with</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-3">
+                                <a href="#"
+                                    class="flex items-center justify-center py-3 px-4 bg-neutral-800 border border-neutral-700 rounded-lg hover:bg-neutral-750 hover:border-yellow-400 transition">
+                                    <i class="fab fa-google text-xl"></i>
+                                </a>
+                                <a href="#"
+                                    class="flex items-center justify-center py-3 px-4 bg-neutral-800 border border-neutral-700 rounded-lg hover:bg-neutral-750 hover:border-yellow-400 transition">
+                                    <i class="fab fa-facebook text-xl"></i>
+                                </a>
+                                <a href="#"
+                                    class="flex items-center justify-center py-3 px-4 bg-neutral-800 border border-neutral-700 rounded-lg hover:bg-neutral-750 hover:border-yellow-400 transition">
+                                    <i class="fab fa-apple text-xl"></i>
+                                </a>
+                            </div>
+                        </form>
+
+                        <!-- Security Notice -->
+                        <div class="mt-6 text-center">
+                            <p class="text-xs text-neutral-500">
+                                <i class="fas fa-shield-alt mr-1 text-yellow-400"></i>
+                                Your connection is secure and encrypted
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Back to Home -->
+        <div class="text-center mt-6">
+            <a href="index.html" class="text-neutral-400 hover:text-yellow-400 transition">
+                <i class="fas fa-arrow-left mr-2"></i>Back to Home
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function flipCard() {
+            const container = document.getElementById('flipContainer');
+            const title = document.getElementById('main-title');
+            const subtitle = document.getElementById('main-subtitle');
+
+            container.classList.toggle('flipped');
+
+            if (container.classList.contains('flipped')) {
+                setTimeout(() => {
+                    title.textContent = 'Welcome Back';
+                    subtitle.textContent = 'Sign in to your Luxigo account';
+                }, 300);
+            } else {
+                setTimeout(() => {
+                    title.textContent = 'Create Your Account';
+                    subtitle.textContent = 'Join Luxigo today and unlock premium features';
+                }, 300);
+            }
+        }
+    </script>
+</body>
+
+</html>
