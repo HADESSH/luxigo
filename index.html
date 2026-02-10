@@ -3,599 +3,209 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxigo Comapny</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+    <title>Our Team</title>
 
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .card {
+            background: #0b1e2d;
+            padding: 30px 40px;
+            border-radius: 16px;
+            text-align: center;
+            width: 900px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            opacity: 0.85;
+        }
+
+        button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            background: #2dd4bf;
+            color: #003;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        /* ===== Chart ===== */
+
+        .chart {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .leader {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #2dd4bf;
+            overflow: hidden;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .role {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .line {
+            width: 2px;
+            height: 40px;
+            background: #2dd4bf;
+            margin: 10px auto;
+        }
+
+        .members {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .members::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 5%;
+            width: 90%;
+            height: 2px;
+            background: #2dd4bf;
+        }
+
+        .member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 22%;
+        }
+
+        .member .line {
+            height: 20px;
+        }
+
+        .container a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
 </head>
 
-<body class="bg-neutral-950 text-neutral-200">
+<body>
 
-    <!-- navbar -->
-    <nav class="bg-neutral-900 shadow-lg sticky top-0 z-50 ">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="card">
+        <h1 id="title">Welcome to Our Group</h1>
+        <p id="subtitle">Click below to view our team structure</p>
 
-            <div class="flex items-center gap-2">
-                <img src="img/luxigo-logo.jpg" alt="Luxigo Logo" class="w-20 h-20 rounded-full object-cover">
-                <span class="text-2xl font-bold text-yellow-400 tracking-wide">
-                    Luxigo
-                </span>
+        <button id="btn">Get Started</button>
+
+        <div class="chart" id="chart">
+
+            <!-- Leader -->
+            <div class="leader">
+                <div class="photo">
+                    <img src="img/ME.jpg">
+                </div>
+                <div class="name">Korn Leanghong</div>
+                <div class="role">Team Leader</div>
             </div>
 
-            <div>
-                <a href="index.html" class="text-neutral-200 hover:text-yellow-400 mx-4 transition">Home</a>
-                <a href="abt.html" class="text-neutral-200 hover:text-yellow-400 mx-4 transition">About</a>
-                <a href="servicee.html" class="text-neutral-200 hover:text-yellow-400 mx-4 transition">Services</a>
-                <a href="contact.html" class="text-neutral-200 hover:text-yellow-400 mx-4 transition">Contact</a>
-            </div>
+            <div class="line"></div>
 
-            <!-- premium gold button -->
-            <div>
-                <a href="sign.html" class="border border-yellow-400 text-yellow-400 px-4 py-2 rounded font-semibold
-                          hover:bg-yellow-400 hover:text-black transition">
-                    Sign Up
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- text home -->
-    <section class="container mx-auto px-4 py-20 text-center">
-        <h1 class="text-5xl font-bold mb-4 text-yellow-400">Welcome to Luxigo</h1>
-        <p class="text-xl mb-8 text-neutral-200">Your one-stop solution for all your digital needs.</p>
-        <!-- <a href="#" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition">
-            Get Started
-        </a> -->
-        <img src="img/20.png" alt=""
-            class="mx-auto mt-10 rounded-lg shadow-lg w-3/4">
-        <p class="text-xl mb-5 mt-5 px-10 text-neutral-200">
-            At Luxigo, we specialize in delivering top-notch digital solutions tailored to your business needs.
-            Our team of experts is dedicated to providing innovative services that drive growth and success.
-        </p>
-    </section>
-
-    <!-- slide -->
-    <div class="px-40  ">
-        <div id="default-carousel" class="relative w-full" data-carousel="slide">
-            <!-- Carousel wrapper -->
-            <div class="relative h-40 overflow-hidden rounded-base md:h-40">
-                <!-- Item 1 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="flex justify-around items-center h-40 p-5 rounded-lg shadow-lg">
-                        <img class="w-40  mx-10" src="img/invest.jpg" alt="">
-                        <img class="w-40  mx-10" src="img/Ajpg.jpg" alt="">
-                        <img class="w-40  mx-10" src="img/Q.jpg" alt="">
-                        <img class="w-40  mx-10" src="img/marketing.jpg" alt="">
-                        <img class="w-40  mx-10" src="img/aura.jpg" alt="">
-
+            <!-- Members -->
+            <div class="members">
+                <div class="member">
+                    <div class="line"></div>
+                    <div class="photo">
+                        <img src="img/vechsa.jpg">
                     </div>
+                    <div class="name">Member 1</div>
+                    <div class="role">Dy Vechsa</div>
                 </div>
 
-                <!-- Item 2 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="flex justify-around items-center h-40 p-5 rounded-lg shadow-lg">
-                        <img class="w-40  mx-10" src="img/invest.jpg" alt="">
-                        <img class="w-40  mx-10" src="img/Ajpg.jpg" alt="">
-                        <img class="w-40  mx-10" src="img/Q.jpg" alt="">
-                        <img class="w-40  mx-10" src="img/marketing.jpg" alt="">
-                        <img class="w-40  mx-10" src="img/aura.jpg" alt="">
-
+                <div class="member">
+                    <div class="line"></div>
+                    <div class="photo">
+                        <img src="img/chheng.jpg">
                     </div>
+                    <div class="name">Member 2</div>
+                    <div class="role">Ky Kimchheng</div>
                 </div>
 
-                <!-- Item 3 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="flex justify-around items-center h-40 p-5 rounded-lg shadow-lg">
-                        <img class="w-40  mx-10" src="img/invest.jpg" alt="">
-                        <img class="w-40  mx-10" src="img/Ajpg.jpg" alt="">
-                        <img class="w-40  mx-10" src="img/Q.jpg" alt="">
-                        <img class="w-40  mx-10" src="img/marketing.jpg" alt="">
-                        <img class="w-40  mx-10" src="img/aura.jpg" alt="">
-
+                <div class="member">
+                    <div class="line"></div>
+                    <div class="photo">
+                        <img src="img/jnita.jpg">
                     </div>
+                    <div class="name">Member 3</div>
+                    <div class="role">Pich Sonita</div>
                 </div>
 
-            </div>
-        </div>
-    </div>
-
-
-    <!-- platform used flowbite -->
-    <div class="px-40 mt-5 mb-5 bg-neutral-900 py-8">
-        <div class="grid grid-cols-3 gap-4">
-            <div class="col-span-1 bg-yellow-500 h-full p-5 rounded-lg shadow-lg">
-                <h2 class="text-4xl font-bold text-black">
-                    Platform Used Flowbite
-                </h2><br>
-                <p class="text-black mb-5">
-                    Flowbite is a popular open-source library of UI components built with Tailwind CSS...
-                </p>
-
-                <button class="bg-black hover:bg-neutral-800 text-yellow-400 font-semibold py-3 px-7 
-            rounded-lg shadow-md transition-all duration-300">
-                    Try for free
-                </button>
-            </div>
-
-            <div class="col-span-2 text-neutral-200 ">
-                <div class="grid grid-flow-col grid-rows-2 gap-4 p-5 text-center">
-                    <div class="bg-neutral-800 p-5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                        <i class="fas fa-cogs fa-2x mb-3 text-yellow-400"></i>
-                        <h3 class="text-xl font-semibold mb-2 text-yellow-400">Customizable</h3>
-                        <p>Flowbite components are highly customizable...</p>
+                <div class="member">
+                    <div class="line"></div>
+                    <div class="photo">
+                        <img src="img/liya.jpg">
                     </div>
-
-                    <div class="bg-neutral-800 p-5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                        <i class="fas fa-mobile-alt fa-2x mb-3 text-yellow-400"></i>
-                        <h3 class="text-xl font-semibold mb-2 text-yellow-400">Responsive Design</h3>
-                        <p>All Flowbite components are designed...</p>
-                    </div>
-
-                    <div class="bg-neutral-800 p-5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                        <i class="fas fa-clock fa-2x mb-3 text-yellow-400"></i>
-                        <h3 class="text-xl font-semibold mb-2 text-yellow-400">Time-Saving</h3>
-                        <p>Using Flowbite can significantly speed up...</p>
-                    </div>
-
-                    <div class="bg-neutral-800 p-5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                        <i class="fas fa-users fa-2x mb-3 text-yellow-400"></i>
-                        <h3 class="text-xl font-semibold mb-2 text-yellow-400">Community Support</h3>
-                        <p>Flowbite has an active community...</p>
-                    </div>
+                    <div class="name">Member 4</div>
+                    <div class="role">Kan Liya</div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- exclusive projects -->
-    <section class="container mx-auto px-4 py-20 text-center">
-        <h2 class="text-4xl font-bold mb-10 text-yellow-400">Exclusive Projects</h2>
-        <div class="grid grid-cols-3 gap-8">
-            <div class="bg-neutral-900 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <img src="img/x-invest.jpg" alt=""
-                    class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-2xl font-semibold mb-4 text-yellow-400">Project One</h3>
-                    <p class="text-neutral-200 mb-4">A brief description of Project One highlighting its features and
-                        benefits.</p>
-                    <a href="#"
-                        class="bg-yellow-400 text-black px-4 py-2 rounded font-semibold hover:bg-yellow-500 transition">Learn
-                        More</a>
-                </div>
-            </div>
-            <div class="bg-neutral-900 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <img src="img/trade.jpg"
-                    alt="" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-2xl font-semibold mb-4 text-yellow-400">Project Two</h3>
-                    <p class="text-neutral-200 mb-4">A brief description of Project Two highlighting its features and
-                        benefits.</p>
-                    <a href="#"
-                        class="bg-yellow-400 text-black px-4 py-2 rounded font-semibold hover:bg-yellow-500 transition">Learn
-                        More</a>
-                </div>
-            </div>
-            <div class="bg-neutral-900 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <img src="img/sm-invest.jpg"
-                    alt="" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-2xl font-semibold mb-4 text-yellow-400">Project Three</h3>
-                    <p class="text-neutral-200 mb-4">A brief description of Project Three highlighting its features and
-                        benefits.</p>
-                    <a href="#"
-                        class="bg-yellow-400 text-black px-4 py-2 rounded font-semibold hover:bg-yellow-500 transition">Learn
-                        More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- advance features -->
-    <div class="px-40 bg-neutral-900 mt-8 py-8 mb-8">
-        <div class="grid grid-cols-2">
-            <div class="p-5">
-                <h2 class="text-4xl font-bold mb-4 text-yellow-400">Advance Features</h2>
-                <p class="text-neutral-200 mb-6">
-                    Our platform is equipped with advanced features designed to enhance your experience and provide
-                    maximum value.
-                </p>
-                <ul class="list-disc list-inside text-neutral-200 space-y-2">
-                    <li>Feature One: Description of feature one highlighting its benefits.</li>
-                    <li>Feature Two: Description of feature two highlighting its benefits.</li>
-                    <li>Feature Three: Description of feature three highlighting its benefits.</li>
-                    <li>Feature Four: Description of feature four highlighting its benefits.</li>
-                </ul>
-            </div>
-            <div class="p-5">
-
-
-                <div id="default-carousel" class="relative w-full" data-carousel="slide">
-                    <!-- Carousel wrapper -->
-                    <div class="relative h-56 overflow-hidden rounded-base md:h-96">
-                        <!-- Item 1 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="img/feature1.jpg"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="...">
-                        </div>
-                        <!-- Item 2 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="img/feature2.jpg"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="...">
-                        </div>
-                        <!-- Item 3 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="img/feature3.jpg"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="...">
-                        </div>
-
-                    </div>
-                    <!-- Slider indicators -->
-                    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                        <button type="button" class="w-3 h-3 rounded-base" aria-current="true" aria-label="Slide 1"
-                            data-carousel-slide-to="0"></button>
-                        <button type="button" class="w-3 h-3 rounded-base" aria-current="false" aria-label="Slide 2"
-                            data-carousel-slide-to="1"></button>
-                        <button type="button" class="w-3 h-3 rounded-base" aria-current="false" aria-label="Slide 3"
-                            data-carousel-slide-to="2"></button>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- private own information -->
-    <section class="container mx-auto px-4 py-20 text-center bg-neutral-900">
-        <div class="grid grid-cols-2 ">
-            <div class="p-5">
-                <img src="img/prv_company.jpg" alt="" class="mx-auto rounded-lg shadow-lg w-3/4 shadow-lg">
-            </div>
-            <div class="p-5">
-                <h2 class="text-4xl font-bold mb-4 text-yellow-400">Private Own Information</h2>
-                <p class="text-neutral-200 mb-6">
-                    We prioritize your privacy and ensure that your personal information is protected with the highest
-                    security standards.
-                </p>
-                <ul class="list-disc list-inside text-neutral-200 space-y-2">
-                    <li>Data Encryption: All sensitive data is encrypted to prevent unauthorized access.</li>
-                    <li>Privacy Policies: We adhere to strict privacy policies to safeguard your information.</li>
-                    <li>User Control: You have full control over your personal data and how it is used.</li>
-                    <li>Regular Audits: Our systems undergo regular security audits to maintain data integrity.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- experience more... -->
-    <section class="container mx-auto px-4 py-20 text-center bg-neutral-900 mt-8 mb-8">
-        <div class="grid grid-cols-2 ">
-
-            <div class="p-5">
-                <h2 class="text-4xl font-bold mb-4 text-yellow-400">Experience More with Luxigo</h2>
-                <p class="text-neutral-200 mb-6">
-                    Discover the full potential of our platform and take your digital experience to the next level with
-                    Luxigo.
-                </p>
-                <ul class="list-disc list-inside text-neutral-200 space-y-2">
-                    <li>Seamless Integration: Easily integrate our services with your existing systems.</li>
-                    <li>24/7 Support: Our dedicated support team is available around the clock to assist you.</li>
-                    <li>Innovative Solutions: Stay ahead with our cutting-edge technology and solutions.</li>
-                    <li>User-Friendly Interface: Enjoy a smooth and intuitive user experience.</li>
-                </ul>
-            </div>
-
-            <div class="p-5">
-                <img src="img/experience.jpg" alt="" class="mx-auto rounded-lg shadow-lg w-3/4 shadow-lg">
-            </div>
-        </div>
-    </section>
-
-    <!-- standing different -->
-    <section class="container mx-auto px-4 py-20 text-center bg-neutral-900">
-        <h2 class="text-4xl font-bold mb-10 text-yellow-400">What Makes Us Stand Different</h2>
-        <div class="grid grid-cols-3 gap-8">
-            <div class="bg-neutral-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <h3 class="text-2xl font-semibold mb-4 text-yellow-400">Innovation</h3>
-                <p class="text-neutral-200">We constantly push the boundaries of technology to deliver innovative
-                    solutions that meet the evolving needs of our clients.</p>
-            </div>
-            <div class="bg-neutral-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <h3 class="text-2xl font-semibold mb-4 text-yellow-400">Customer-Centric Approach</h3>
-                <p class="text-neutral-200">Our clients are at the heart of everything we do. We prioritize their needs
-                    and work closely with them to ensure their success.</p>
-            </div>
-            <div class="bg-neutral-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <h3 class="text-2xl font-semibold mb-4 text-yellow-400">Expert Team</h3>
-                <p class="text-neutral-200">Our team of experienced professionals brings a wealth of knowledge and
-                    expertise to every project, ensuring high-quality results.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- trusted by many ceo -->
-    <section class="container mx-auto px-4 py-20 text-center">
-        <h2 class="text-4xl font-bold mb-10 text-yellow-400 ">Partner</h2>
-        <p class="mb-8">
-            Trusted by CEOs and businesses worldwide for our commitment to excellence and innovation.
-        </p>
-
-        <!-- slide -->
-
-
-        <div id="default-carousel" class="relative w-full px-40" data-carousel="slide">
-            <!-- Carousel wrapper -->
-            <div class="relative h-56 overflow-hidden rounded-base md:h-96">
-                <!-- Item 1 -->
-                <div class="hidden duration-700 ease-in-out flex justify-between" data-carousel-item>
-                    <!-- img1 -->
-                    <div class=" text-center w-full pt-5 text-xl">
-                        <p>
-                            "Luxigo transformed our business with their innovative solutions. Highly recommended!"
-                        </p>
-                        <div class="flex justify-center mt-12 ">
-                            <div class="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center">
-                                <img src="img/Elon_musk.jpg"
-                                    alt="" class="rounded-full mx-auto w-24 h-24 object-cover flex justify-center ">
-                            </div>
-                        </div>
-                        <div class=" items-center pt-5">
-                            <h3 class="text-xl font-semibold text-yellow-400">Elon Musk</h3>
-                            <p>
-                                CEO of Tesla
-                            </p>
-                        </div>
-                    </div>
-                    <!-- img2 -->
-                    <div class=" text-center w-full pt-5 text-xl">
-                        <p>
-                            "Luxigo transformed our business with their innovative solutions. Highly recommended!"
-                        </p>
-                        <div class="flex justify-center mt-12 ">
-                            <div class="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center">
-                                <img src="img/Jeff_bezos.jpg"
-                                    alt="" class="rounded-full mx-auto w-24 h-24 object-cover flex justify-center ">
-                            </div>
-                        </div>
-                        <div class=" items-center pt-5">
-                            <h3 class="text-xl font-semibold text-yellow-400"> Jeff Bezos</h3>
-                            <p>
-                                CEO of Amazon
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="hidden duration-700 ease-in-out flex justify-between" data-carousel-item>
-                    <!-- img1 -->
-                    <div class=" text-center w-full pt-5 text-xl">
-                        <p>
-                            "Luxigo transformed our business with their innovative solutions. Highly recommended!"
-                        </p>
-                        <div class="flex justify-center mt-12 ">
-                            <div class="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center">
-                                <img src="img/Mark_fb.jpg"
-                                    alt="" class="rounded-full mx-auto w-24 h-24 object-cover flex justify-center ">
-                            </div>
-                        </div>
-                        <div class=" items-center pt-5">
-                            <h3 class="text-xl font-semibold text-yellow-400">Mark Zuckerberg</h3>
-                            <p>
-                                CEO of Meta
-                            </p>
-                        </div>
-                    </div>
-                    <!-- img2 -->
-                    <div class=" text-center w-full pt-5 text-xl">
-                        <p>
-                            "Luxigo transformed our business with their innovative solutions. Highly recommended!"
-                        </p>
-                        <div class="flex justify-center mt-12 ">
-                            <div class="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center">
-                                <img src="img/bill_gate.jpg"
-                                    alt="" class="rounded-full mx-auto w-24 h-24 object-cover flex justify-center ">
-                            </div>
-                        </div>
-                        <div class=" items-center pt-5">
-                            <h3 class="text-xl font-semibold text-yellow-400">bill Gate</h3>
-                            <p>
-                                CEO of Microsoft
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="hidden duration-700 ease-in-out flex justify-between" data-carousel-item>
-                    <!-- img1 -->
-                    <div class=" text-center w-full pt-5 text-xl">
-                        <p>
-                            "Luxigo transformed our business with their innovative solutions. Highly recommended!"
-                        </p>
-                        <div class="flex justify-center mt-12 ">
-                            <div class="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center">
-                                <img src="img/enstain.jpg"
-                                    alt="" class="rounded-full mx-auto w-24 h-24 object-cover flex justify-center ">
-                            </div>
-                        </div>
-                        <div class=" items-center pt-5">
-                            <h3 class="text-xl font-semibold text-yellow-400">Albert Einstain</h3>
-                            <p>
-                                Theoretical Physicist
-                            </p>
-                        </div>
-                    </div>
-                    <!-- img2 -->
-                    <div class=" text-center w-full pt-5 text-xl">
-                        <p>
-                            "Luxigo transformed our business with their innovative solutions. Highly recommended!"
-                        </p>
-                        <div class="flex justify-center mt-12 ">
-                            <div class="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center">
-                                <img src="img/Isaac.jpg"
-                                    alt="" class="rounded-full mx-auto w-24 h-24 object-cover flex justify-center ">
-                            </div>
-                        </div>
-                        <div class=" items-center pt-5">
-                            <h3 class="text-xl font-semibold text-yellow-400">Isaac Newton</h3>
-                            <p>
-                                Mathematician and Physicist
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- Slider indicators -->
-            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                <button type="button" class="w-3 h-3 rounded-base" aria-current="true" aria-label="Slide 1"
-                    data-carousel-slide-to="0"></button>
-                <button type="button" class="w-3 h-3 rounded-base" aria-current="false" aria-label="Slide 2"
-                    data-carousel-slide-to="1"></button>
-                <button type="button" class="w-3 h-3 rounded-base" aria-current="false" aria-label="Slide 3"
-                    data-carousel-slide-to="2"></button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- integrate tools -->
-    <section class="container mx-auto px-4 py-20 text-center bg-neutral-900">
-        <h2 class="text-4xl font-bold mb-10 text-yellow-400">Integrate with Your Favorite Tools</h2>
-        <p class="text-neutral-200 mb-8">
-            Seamlessly integrate Luxigo with a wide range of popular tools and platforms to enhance your workflow.
-        </p>
-
-        <div class="grid grid-cols-5 gap-6 justify-center">
-
-            <!-- Row 1 -->
-            <div class="bg-neutral-800 rounded-lg shadow-lg p-6 flex items-center justify-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <img src="img/11.png"
-                    alt="Tool 1" class="w-40 object-contain">
-            </div>
-
-            <div class="bg-neutral-800 rounded-lg shadow-lg p-6 flex items-center justify-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <img src="img/12.png"
-                    alt="Tool 2" class="w-40 object-contain">
-            </div>
-
-            <div class="bg-neutral-800 rounded-lg shadow-lg p-6 flex items-center justify-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <img src="img/13.png" alt="Tool 3"
-                    class="w-40 object-contain">
-            </div>
-
-            <div class="bg-neutral-800 rounded-lg shadow-lg p-6 flex items-center justify-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <img src="img/14.png" alt="Tool 4"
-                    class="w-40 object-contain">
-            </div>
-
-            <div class="bg-neutral-800 rounded-lg shadow-lg p-6 flex items-center justify-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <img src="img/15.png" alt="Tool 5"
-                    class="w-40 object-contain">
-            </div>
-
-            <!-- Row 2 – Centered -->
-            <div class="col-span-1">
-
-            </div> <!-- spacer -->
-            <div class="bg-neutral-800 rounded-lg shadow-lg p-6 flex items-center justify-center col-span-1 hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <img src="img/16.png" alt="Tool 6"
-                    class="w-full object-contain">
-            </div>
-
-            <div class="bg-neutral-800 rounded-lg shadow-lg p-6 flex items-center justify-center col-span-1 hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <img src="img/17.png" alt="Tool 7"
-                    class="w-full object-contain">
-            </div>
-        </div>
-    </section>
-
-    <!-- image announcement -->
-    <section class="container mx-auto px-4 py-20 text-center mt-20 mb-8">
-        <img src="img/announcement.jpg" alt="" class="mx-auto rounded-lg shadow-lg w-1/2">
-    </section>
-
-    <!-- ready  to start your project? -->
-    <section class="container mx-auto px-4 py-20 text-center ">
-        <h2 class="text-4xl font-bold mb-4 text-yellow-400">Ready to Start Your Project?</h2>
-        <p class="text-neutral-200 mb-8">
-            Join countless others who have transformed their businesses with Luxigo. Get started today!
-        </p>
-        <a href="#"
-            class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition">
-            Contact Us
-        </a>
-    </section>
-
-    <!-- footer  -->
-    <div class="px-40 py-8 bg-neutral-900 mb-5 mt-8">
-        <div class="grid grid-cols-4 gap-8">
-
-            <div>
-                <h3 class="text-xl font-bold mb-4 text-yellow-400">Company</h3>
-                <ul class="text-neutral-200 space-y-2">
-                    <li><a href="#" class="hover:text-yellow-400 transition">About Us</a></li>
-                    <li><a href="#" class="hover:text-yellow-400 transition">Careers</a></li>
-                    <li><a href="#" class="hover:text-yellow-400 transition">Blog</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h3 class="text-xl font-bold mb-4 text-yellow-400">Services</h3>
-                <ul class="text-neutral-200 space-y-2">
-                    <li><a href="#" class="hover:text-yellow-400 transition">Consulting</a></li>
-                    <li><a href="#" class="hover:text-yellow-400 transition">Development</a></li>
-                    <li><a href="#" class="hover:text-yellow-400 transition">Design</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold mb-4 text-yellow-400">Support</h3>
-                <ul class="text-neutral-200 space-y-2">
-                    <li><a href="#" class="hover:text-yellow-400 transition">Help Center</a></li>
-                    <li><a href="#" class="hover:text-yellow-400 transition">Contact Us</a></li>
-                    <li><a href="#" class="hover:text-yellow-400 transition">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div>
-                <div class="flex items-center space-x-4 mb-4">
-
-                    <h3 class="text-xl font-bold text-yellow-400 ">Luxigo</h3>
-                </div>
-
-                <p class="text-neutral-200 mb-4">Follow us on social media for the latest updates and news.</p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-neutral-200 hover:text-yellow-400 transition" title="Facebook" aria-label="Facebook"><i
-                            class="fab fa-facebook fa-lg"></i></a>
-                    <a href="#" class="text-neutral-200 hover:text-yellow-400 transition" title="Twitter" aria-label="Twitter"><i
-                            class="fab fa-twitter fa-lg"></i></a>
-                    <a href="#" class="text-neutral-200 hover:text-yellow-400 transition" title="LinkedIn" aria-label="LinkedIn"><i
-                            class="fab fa-linkedin fa-lg"></i></a>
-                    <a href="#" class="text-neutral-200 hover:text-yellow-400 transition" title="Instagram" aria-label="Instagram"><i
-                            class="fab fa-instagram fa-lg"></i></a>
-                </div>
+            <!-- start -->
+            <div class="container">
+                <button><a href="loading.html">Get Start</a></button>
             </div>
 
         </div>
     </div>
 
-    <!-- copyright -->
-    <div class="bg-neutral-900 mx-40 h-px">
+    <script>
+        const btn = document.getElementById("btn");
+        const chart = document.getElementById("chart");
+        const title = document.getElementById("title");
+        const subtitle = document.getElementById("subtitle");
 
-        <div class="items-center justify-center flex">
-            <div class="text-neutral-500 py-4">
-                &copy; 2026 Luxigo. ot dg yy ey tt teh.
-            </div>
-        </div>
-    </div>
+        btn.onclick = () => {
+            title.innerText = "Our Team Structure";
+            subtitle.style.display = "none";
+            btn.style.display = "none";
+            chart.style.display = "block";
+        };
+    </script>
+
 </body>
-<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 
 </html>
