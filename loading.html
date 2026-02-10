@@ -131,22 +131,22 @@
                 isLoading = true;
                 $(this).addClass('hidden');
 
-                // Show the loading GIF
+                // show gif
                 $('#loadingGif').addClass('show');
 
                 let progress = 1;
 
                 const interval = setInterval(() => {
-                    // Update progress bar width
+                    // update progress bar width
                     $('#progressBar').css('width', progress + '%');
 
-                    // Update loading number
+                    // update loading number
                     $('#loadingNumber').text(progress);
 
                     if (progress >= 100) {
                         clearInterval(interval);
 
-                        // Hide the loading GIF
+                        // hide gif and  redirect
                         $('#loadingGif').removeClass('show');
                         setTimeout(() => {
                             window.location.href = nextPage;
