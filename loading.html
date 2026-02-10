@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #2dd4bf;
+            background: linear-gradient(135deg, #000000, #2dd4bf);
+            color: #ffffff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .loading-gif {
+            display: none;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .loading-gif.show {
+            display: block;
+        }
+
+        .loading-gif img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+        }
+
+        .loading-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .loading-text {
+            color: #ffffff;
+        }
+
+        .loading-number {
+            color: #ffffff;
+        }
+
+        .progress-container {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            background: #000000;
+            border: 2px solid #ffffff;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #ffffff;
+            transition: width 0.05s linear;
+        }
+
+        .start-button {
+            display: block;
+            margin: 30px auto 0;
+            padding: 15px 60px;
+            background: #000000;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .start-button:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .start-button.hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="loading-gif" id="loadingGif">
+            <img src="img/Wait Waiting GIF - Find & Share on GIPHY.gif" alt="Loading">
+        </div>
+
+        <div class="loading-header">
+            <span class="loading-text">Loading...</span>
+            <span class="loading-number" id="loadingNumber">1</span>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <button class="start-button" id="startButton">START</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let isLoading = false;
+
+            const nextPage = 'index.html';
+
+            $('#startButton').on('click', function () {
+                if (isLoading) return;
+
+                isLoading = true;
+                $(this).addClass('hidden');
+
+                // Show the loading GIF
+                $('#loadingGif').addClass('show');
+
+                let progress = 1;
+
+                const interval = setInterval(() => {
+                    // Update progress bar width
+                    $('#progressBar').css('width', progress + '%');
+
+                    // Update loading number
+                    $('#loadingNumber').text(progress);
+
+                    if (progress >= 100) {
+                        clearInterval(interval);
+
+                        // Hide the loading GIF
+                        $('#loadingGif').removeClass('show');
+                        setTimeout(() => {
+                            window.location.href = nextPage;
+                        }, 500);
+                    }
+
+                    progress++;
+                }, 30);
+            });
+        });
+    </script>
+</body>
+
+</html>
